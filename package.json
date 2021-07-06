@@ -15,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/BlakeWilliam/it122/issues"
   },
-  "homepage": "https://github.com/BlakeWilliam/it122#readme"
+  "homepage": "https://github.com/BlakeWilliam/it122#readme",
+
+  "type":"module"
 }

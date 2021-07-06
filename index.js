@@ -1,9 +1,10 @@
 console.log("Welcome To IT122")
 
-// import http from 'http'; is not working local. Find more info on why
+// import http from 'http'; now works - needed to add "type":"module" to package.json
 
-const http = require("http");
+// const http = require("http");
 
+import http from 'http';
 // This command starts a HTTP server 
 http.createServer((req,res) => {
     var path = req.url.toLowerCase();
