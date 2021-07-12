@@ -6,22 +6,21 @@ let trails = [
     { trailName : "Gem Lake", park: 'Mount Baker Snoqualmie National Forest', city : 'Snoqualmie', state : 'WA', length : '11 miles', elevation_gain : '2670 feet'  }
 ];
 
-// console.log(trails)
-
-
 // This will return all trails in the array - WORKS!
 // console.log('Running .forEach')
 // trails.forEach((trail) => {
 //     console.log(trail)
 // });
 
-// this doesn't work - not sure how to format
-console.log('get all trails function')
-const getAll = () => {
-    trails.forEach((trail) => {
-        console.log(trail)
-    });
-}
+// this is how you use .map method - also WORKS!
+// console.log('get all trails function')
+// const getAll = trails.map((trail) => { 
+//     return { trailName : trail.trailName, park : trail.park, city : trail.city, state : trail.state, length : trail.length, elevation_gain : trail.elevation_gain }
+//     });
+// console.log(getAll)
+
+// This is the simpliest way to display all on 
+const getAll = trails.slice()
 
 //create const to export # of trails - when I use this to route the / path with stringify, it works.
 // const getAll = () => {
