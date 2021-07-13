@@ -5,25 +5,26 @@ console.log("Welcome To IT122 - server started")
 // const http = require("http");
 
 import http from 'http';
-// import { parse } from "querystring";
+import { parse } from "querystring";
 // This command starts a HTTP server 
 http.createServer((req,res) => {
     var path = req.url.toLowerCase();
-    // let url = req.url.split("?");
-    // let query = parse(url[1]);
+    let url = req.url.split("?");
+    let query = parse(url[1]);
+
     console.log(path)
     switch(path) {
         case '/':
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end(JSON.stringify(trails));
+            res.end(JSON.stringify(getAll()));
             break;
         case '/about':
             res.writeHead(200, {'Content-Type': 'text/plain'});
             res.end('About page');
             break;
-        case '/detail?':
+        case '/detail':
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end('detail page');
+            res.end(JSON.stringify(getItem()));
             break;
         default:
             res.writeHead(404, {'Content-Type': 'text/plain'});
@@ -32,4 +33,5 @@ http.createServer((req,res) => {
     }
 }).listen(process.env.PORT || 3000);
 
+// import * as data from './data.js';
 import { getAll, getItem } from './data.js';
