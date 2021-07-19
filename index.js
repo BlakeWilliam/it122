@@ -24,7 +24,8 @@ http.createServer((req,res) => {
             break;
         case '/detail':
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end(JSON.stringify(getItem()));
+            // res.end(JSON.stringify(getAll()));
+            res.end(JSON.stringify(getItem('Gem Lake')));
             break;
         default:
             res.writeHead(404, {'Content-Type': 'text/plain'});
